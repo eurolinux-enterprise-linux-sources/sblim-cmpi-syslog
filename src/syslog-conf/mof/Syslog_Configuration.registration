@@ -1,0 +1,4 @@
+# Classname Namespace Providername Libraryname Capabilities ...
+Syslog_SettingContext root/cimv2 Syslog_SettingContext Syslog_SettingContext association
+Syslog_Setting root/cimv2 Syslog_Setting Syslog_Setting instance
+Syslog_Configuration root/cimv2 Syslog_Configuration Syslog_Configuration instance

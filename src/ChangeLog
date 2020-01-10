@@ -1,0 +1,650 @@
+2009-05-22  Tyrel Datwyler <tyreld@us.ibm.com>
+
+	* syslog-service/Makefile.am:
+
+	fixed automake warning
+
+2009-05-22  Tyrel Datwyler <tyreld@us.ibm.com>
+
+	* syslog-conf/util/syslogsettingparse.c,
+	syslog-service/Syslog_ServiceProcess.c:
+
+	2795176      migrate provider licenses to EPL
+
+2009-05-21  Tyrel Datwyler <tyreld@us.ibm.com>
+
+	* ChangeLog, NEWS:
+
+	[2795176] migrate provider licenses to EPL
+
+2009-05-21  Tyrel Datwyler <tyreld@us.ibm.com>
+
+	* COPYING, acinclude.m4, autoconfiscate.sh,
+	sblim-cmpi-syslog.rh.spec, sblim-cmpi-syslog.rh.spec.in,
+	sblim-cmpi-syslog.spec, sblim-cmpi-syslog.spec.in,
+	syslog-conf/Syslog_ConfUtils.c, syslog-conf/Syslog_ConfUtils.h,
+	syslog-conf/Syslog_Configuration.c, syslog-conf/Syslog_Setting.c,
+	syslog-conf/Syslog_SettingContext.c,
+	syslog-conf/provider-register.sh,
+	syslog-conf/mof/Syslog_Configuration.mof,
+	syslog-conf/mof/Syslog_ConfigurationRegistration.mof,
+	syslog-conf/test/runtest_pegasus.sh,
+	syslog-conf/test/runtest_wbemcli.sh,
+	syslog-conf/util/syslogconfutil.c,
+	syslog-conf/util/syslogconfutil.h,
+	syslog-conf/util/syslogsettingparse.c,
+	syslog-log/Syslog_LogRecord.c, syslog-log/Syslog_LogUtils.c,
+	syslog-log/Syslog_LogUtils.h, syslog-log/Syslog_MessageLog.c,
+	syslog-log/Syslog_RecordInLog.c, syslog-log/provider-register.sh,
+	syslog-log/mof/Syslog_Log.mof,
+	syslog-log/mof/Syslog_LogRegistration.mof,
+	syslog-log/test/runtest_pegasus.sh,
+	syslog-log/test/runtest_wbemcli.sh,
+	syslog-log/util/sysloglogutil.c, syslog-log/util/sysloglogutil.h,
+	syslog-log/util/syslogtimeparse.c, syslog-service/Syslog_Service.c,
+	syslog-service/Syslog_ServiceProcess.c,
+	syslog-service/Syslog_ServiceUtils.c,
+	syslog-service/Syslog_ServiceUtils.h,
+	syslog-service/provider-register.sh,
+	syslog-service/mof/Syslog_Service.mof,
+	syslog-service/mof/Syslog_ServiceRegistration.mof,
+	syslog-service/test/runtest_pegasus.sh,
+	syslog-service/test/runtest_wbemcli.sh,
+	syslog-service/util/syslog-service.sh,
+	syslog-service/util/syslogserviceutil.c,
+	syslog-service/util/syslogserviceutil.h:
+
+	Fixed 2795176: migrate provider licenses to EPL
+
+2009-05-21  Tyrel Datwyler <tyreld@us.ibm.com>
+
+	* INSTALL, aclocal.m4, compile, config.guess, config.sub, depcomp,
+	install-sh, ltmain.sh, missing:
+
+	Fixed 2795190: remove autoconf build tools from cvs
+
+2009-03-16  Tyrel Datwyler <tyreld@us.ibm.com>
+
+	* ChangeLog:
+
+	[ 2688817 ] cmpi-syslog missing includes
+
+2009-03-16  Tyrel Datwyler <tyreld@us.ibm.com>
+
+	* syslog-conf/Syslog_Setting.c,
+	syslog-conf/Syslog_SettingContext.c,
+	syslog-conf/util/syslogconfutil.h, syslog-log/util/sysloglogutil.h,
+	syslog-service/Syslog_ServiceProcess.c,
+	syslog-service/util/syslogserviceutil.h:
+
+	[ 2688817 ] cmpi-syslog missing includes
+
+2009-03-16  Tyrel Datwyler <tyreld@us.ibm.com>
+
+	* ChangeLog, NEWS, syslog-log/Syslog_RecordInLog.c:
+
+	[ 2688817 ] cmpi-syslog missing includes
+
+2007-11-19  Chris Buccella <buccella@vnet.linux.ibm.com>
+
+	* syslog-conf/util/syslogconfutil.c,
+	syslog-conf/util/syslogconfutil.h,
+	syslog-conf/util/syslogsettingparse.c,
+	syslog-log/util/sysloglogutil.c, syslog-log/util/sysloglogutil.h,
+	syslog-log/util/syslogtimeparse.c,
+	syslog-service/util/syslogserviceutil.c,
+	syslog-service/util/syslogserviceutil.h,
+	syslog-conf/mof/Syslog_Configuration.mof,
+	syslog-conf/mof/Syslog_ConfigurationRegistration.mof,
+	syslog-log/mof/Syslog_Log.mof,
+	syslog-log/mof/Syslog_LogRegistration.mof,
+	syslog-service/mof/Syslog_Service.mof,
+	syslog-service/mof/Syslog_ServiceRegistration.mof,
+	syslog-conf/test/runtest_pegasus.sh,
+	syslog-conf/test/runtest_wbemcli.sh,
+	syslog-log/test/runtest_pegasus.sh,
+	syslog-log/test/runtest_wbemcli.sh,
+	syslog-service/test/runtest_pegasus.sh,
+	syslog-service/test/runtest_wbemcli.sh,
+	syslog-service/util/syslog-service.sh,
+	syslog-conf/Syslog_ConfUtils.c, syslog-conf/Syslog_ConfUtils.h,
+	syslog-conf/Syslog_Configuration.c, syslog-conf/Syslog_Setting.c,
+	syslog-conf/Syslog_SettingContext.c, syslog-log/Syslog_LogRecord.c,
+	syslog-log/Syslog_LogUtils.c, syslog-log/Syslog_LogUtils.h,
+	syslog-log/Syslog_MessageLog.c, syslog-log/Syslog_RecordInLog.c,
+	syslog-service/Syslog_Service.c,
+	syslog-service/Syslog_ServiceProcess.c,
+	syslog-service/Syslog_ServiceUtils.c,
+	syslog-service/Syslog_ServiceUtils.h:
+
+	updated URL for CPL (1833455)
+
+2007-01-23  Heidi Eckhart <heidineu@de.ibm.com>
+
+	* configure.ac:
+
+	updated version number
+
+2007-01-23  Heidi Eckhart <heidineu@de.ibm.com>
+
+	* NEWS:
+
+	updated bug list for new tag
+
+2007-01-08  Heidi Eckhart <heidineu@de.ibm.com>
+
+	* ChangeLog, NEWS, syslog-service/Makefile.am,
+	syslog-service/Syslog_ServiceProcess.c:
+
+	[1411000] removed dependency to cmpi-base internal functions
+
+2006-12-13  Heidi Eckhart <heidineu@de.ibm.com>
+
+	* ChangeLog, NEWS, syslog-conf/util/syslogsettingparse.c:
+
+	[1615180]: check mallocs for success
+
+2006-12-11  Heidi Eckhart <heidineu@de.ibm.com>
+
+	* ChangeLog, NEWS, configure.ac:
+
+	updated release notes
+
+2006-11-29  Heidi Eckhart <heidineu@de.ibm.com>
+
+	* syslog-conf/Syslog_Setting.c:
+
+	[1605178]: createInstance returns object path in case of success
+
+2006-11-29  Heidi Eckhart <heidineu@de.ibm.com>
+
+	* syslog-conf/util/syslogsettingparse.c:
+
+	[1538474]: fixed possible memory leaks
+
+2006-11-29  Heidi Eckhart <heidineu@de.ibm.com>
+
+	* syslog-conf/util/syslogconfutil.c:
+
+	[1605163]: configuration enum does now clean up tmp file
+
+2006-05-16  amit_ibm2k
+
+	* ChangeLog, syslog-conf/util/syslogconfutil.h,
+	syslog-conf/util/syslogsettingparse.c:
+
+	Updated following files:	syslog-conf/util/syslogconfutil.h
+	      syslog-conf/util/syslogsettingparse.c	    For bug#1472978
+	: Updated TmpConfFile as "/etc/syslog.conf" and added code
+	to send SIGHUP to syslogd AFTER a create/delete instance in
+	syslog-conf.
+
+2006-03-23  lynnmoss
+
+	* syslog-service/Makefile.am, ChangeLog:
+
+	Bug 1183805 Autoconfiscate - ship
+	syslog-service/util/syslog-service.sh
+
+2006-03-23  lynnmoss
+
+	* syslog-conf/Syslog_SettingContext.c,
+	syslog-log/util/sysloglogutil.c, ChangeLog:
+
+	Bug 1199129 - Providers won't compile with CMPI 1.0 - 2 remaining
+	warnings
+
+2006-03-22  amit_ibm2k
+
+	* ChangeLog:
+
+	Modified Files: 	ChangeLog	 : Updated ChangeLog to
+	reflect changes made today.
+
+2006-03-22  amit_ibm2k
+
+	* syslog-conf/Makefile.am, syslog-conf/mof/makefile,
+	syslog-conf/mof/makefile.pegasus,
+	syslog-conf/mof/makefile.standalone, syslog-conf/test/makefile,
+	syslog-log/mof/makefile, syslog-log/mof/makefile.pegasus,
+	syslog-log/mof/makefile.standalone, syslog-log/test/makefile,
+	syslog-service/mof/makefile, syslog-service/mof/makefile.pegasus,
+	syslog-service/mof/makefile.standalone,
+	syslog-service/test/makefile:
+
+
+	Modified Files: 	syslog-conf/Makefile.am 	Bug 1183805
+	: Updated postinstall and preuninstall targets to copy	    and
+	remove (resp.) /etc/syslogtest.conf file which is required  for the
+	syslog-conf provider to function.
+
+	Removed Files:	syslog-conf/mof/makefile
+	syslog-conf/mof/makefile.pegasus
+	syslog-conf/mof/makefile.standalone syslog-conf/test/makefile
+	syslog-log/mof/makefile syslog-log/mof/makefile.pegasus
+	syslog-log/mof/makefile.standalone syslog-log/test/makefile
+	syslog-service/mof/makefile	syslog-service/mof/makefile.pegasus
+	    syslog-service/mof/makefile.standalone
+	syslog-service/test/makefile	Bug 1183805 : Removed unnecessary
+	makefiles. These makefiles are	      no longer required after
+	autoconf changes.
+
+2006-03-17  amit_ibm2k
+
+	* ChangeLog, NEWS, syslog-conf/Syslog_ConfUtils.c,
+	syslog-conf/Syslog_Configuration.c, syslog-conf/Syslog_Setting.c,
+	syslog-conf/Syslog_SettingContext.c,
+	syslog-conf/util/syslogconfutil.c,
+	syslog-conf/util/syslogconfutil.h,
+	syslog-conf/util/syslogsettingparse.c,
+	syslog-log/Syslog_LogRecord.c, syslog-log/Syslog_LogUtils.c,
+	syslog-log/Syslog_MessageLog.c, syslog-log/Syslog_RecordInLog.c,
+	syslog-log/util/sysloglogutil.c, syslog-log/util/sysloglogutil.h,
+	syslog-log/util/syslogtimeparse.c, syslog-service/Syslog_Service.c,
+	syslog-service/Syslog_ServiceProcess.c,
+	syslog-service/Syslog_ServiceUtils.c,
+	syslog-service/util/syslogserviceutil.h:
+
+
+	Modified Files: ChangeLog NEWS syslog-conf/Syslog_ConfUtils.c
+	syslog-conf/Syslog_Configuration.c
+	syslog-conf/Syslog_Setting.c	syslog-conf/Syslog_SettingContext.c
+	    syslog-conf/util/syslogconfutil.c
+	syslog-conf/util/syslogconfutil.h
+	syslog-conf/util/syslogsettingparse.c
+	syslog-log/Syslog_LogRecord.c syslog-log/Syslog_LogUtils.c
+	syslog-log/Syslog_MessageLog.c syslog-log/Syslog_RecordInLog.c
+	    syslog-log/util/sysloglogutil.c
+	syslog-log/util/sysloglogutil.h
+	syslog-log/util/syslogtimeparse.c
+	syslog-service/Syslog_Service.c
+	syslog-service/Syslog_ServiceProcess.c
+	syslog-service/Syslog_ServiceUtils.c
+	syslog-service/util/syslogserviceutil.h
+
+	Bug Fixed: 1449954. Replaced unnecessary printfs with a debug
+	macro.
+
+2006-03-17  amit_ibm2k
+
+	* ChangeLog, NEWS, syslog-log/Syslog_LogRecord.c,
+	syslog-log/util/syslogtimeparse.c:
+
+
+	Modified Files: 	ChangeLog NEWS
+	syslog-log/Syslog_LogRecord.c	 syslog-log/util/syslogtimeparse.c
+
+	Bug Fixed 1449220 : Fixed testsuite errors. Updated NEWS and
+	ChangeLog to reflect the same.
+
+2006-03-09  amit_ibm2k
+
+	* ChangeLog, syslog-service/Makefile.am,
+	syslog-service/util/syslog-service.sh:
+
+
+	Modified Files: 	ChangeLog :		Updated ChangeLog
+	to reflect correct bug number.	      syslog-service/Makefile.am :
+		  Added rule to install syslog-service.sh  Added Files:
+	syslog-service/util/syslog-service.sh		Added this file
+	back, which got accidentaly removed.
+
+2006-03-07  amit_ibm2k
+
+	* syslog-conf/test/system/linux/setting.c:
+
+
+	Removing one compile time warning from setting.c
+
+2006-03-07  amit_ibm2k
+
+	* ChangeLog, Makefile.in, NEWS, autoconfiscate.sh, config.h.in,
+	configure, syslog-conf/Makefile.in, syslog-log/Makefile.in,
+	syslog-service/Makefile.in:
+
+
+	Adding autoconfiscate.sh and removing unnecessary files (e.g.
+	Makefile.in, config.h.in and configure)
+
+2006-02-20  amit_ibm2k
+
+	* AUTHORS, COPYING, ChangeLog, INSTALL, Makefile.am, Makefile.in,
+	NEWS, acinclude.m4, aclocal.m4, compile, config.guess, config.h.in,
+	config.sub, configure, configure.ac, depcomp, install-sh,
+	ltmain.sh, makefile, missing, pegasus_build, rules,
+	sblim-cmpi-syslog.rh.spec, sblim-cmpi-syslog.rh.spec.in,
+	sblim-cmpi-syslog.spec, sblim-cmpi-syslog.spec.in, setting.cmpi,
+	snia_build, syslog-conf/Makefile.am, syslog-conf/Makefile.in,
+	syslog-conf/Syslog_ConfUtils.c, syslog-conf/Syslog_ConfUtils.h,
+	syslog-conf/Syslog_Configuration.c, syslog-conf/Syslog_Setting.c,
+	syslog-conf/Syslog_SettingContext.c, syslog-conf/makefile,
+	syslog-conf/pegasus_build, syslog-conf/provider-register.sh,
+	syslog-conf/snia_build,
+	syslog-conf/mof/Syslog_Configuration.registration,
+	syslog-conf/test/readme.test-syslog-conf,
+	syslog-conf/util/makefile, syslog-log/Makefile.am,
+	syslog-log/Makefile.in, syslog-log/Syslog_LogRecord.c,
+	syslog-log/Syslog_LogUtils.c, syslog-log/Syslog_LogUtils.h,
+	syslog-log/Syslog_MessageLog.c, syslog-log/Syslog_RecordInLog.c,
+	syslog-log/makefile, syslog-log/pegasus_build,
+	syslog-log/provider-register.sh, syslog-log/snia_build,
+	syslog-log/mof/Syslog_Log.registration,
+	syslog-log/test/readme.test-syslog-log, syslog-log/util/makefile,
+	syslog-service/Makefile.am, syslog-service/Makefile.in,
+	syslog-service/Syslog_Service.c,
+	syslog-service/Syslog_ServiceProcess.c,
+	syslog-service/Syslog_ServiceUtils.c,
+	syslog-service/Syslog_ServiceUtils.h, syslog-service/makefile,
+	syslog-service/pegasus_build, syslog-service/provider-register.sh,
+	syslog-service/snia_build,
+	syslog-service/mof/Syslog_Service.registration,
+	syslog-service/test/readme.test-syslog-service,
+	syslog-service/util/makefile,
+	syslog-service/util/syslog-service.sh,
+	syslog-service/util/syslogserviceutil.c,
+	syslog-service/util/syslogserviceutil.h:
+
+
+	Adding autoconf support
+
+2005-09-15  Viktor Mihajlovski <mihajlov@de.ibm.com>
+
+	* syslog-conf/mof/Syslog_Configuration.mof,
+	syslog-log/Syslog_LogRecord.c, syslog-log/util/syslogtimeparse.c:
+
+	Bugs: 1143448, 1200681. Missing qualifiers in mof.  Further fixed a
+	problem with datetime format.
+
+2004-11-09  sharada-oss
+
+	* README, syslog-log/Syslog_LogUtils.c,
+	syslog-log/test/system/linux/Syslog_LogRecord.system,
+	syslog-log/test/system/linux/logrecord.sh,
+	syslog-log/util/sysloglogutil.c:
+
+	[no log message]
+
+2004-05-27  sharada-oss
+
+	* README, syslog-service/makefile:
+
+	[no log message]
+
+2004-05-26  sharada-oss
+
+	* setting.cmpi,
+	syslog-log/test/system/linux/Syslog_RecordInLog.system,
+	syslog-service/makefile:
+
+	[no log message]
+
+2004-05-21  sharada-oss
+
+	* README, setting.cmpi, syslog-conf/test/runtest_pegasus.sh,
+	syslog-conf/test/runtest_wbemcli.sh,
+	syslog-conf/test/cim/Syslog_SettingContext.cim,
+	syslog-conf/test/system/linux/setting,
+	syslog-conf/test/system/linux/setting.c,
+	syslog-conf/util/syslogsettingparse.c, syslog-log/README,
+	syslog-log/Syslog_LogRecord.c, syslog-log/Syslog_MessageLog.c,
+	syslog-log/Syslog_RecordInLog.c,
+	syslog-log/test/system/linux/Syslog_MessageLog.pl,
+	syslog-log/test/system/linux/Syslog_MessageLog.system,
+	syslog-log/test/system/linux/logrecord.sh,
+	syslog-log/test/system/linux/messagelog.sh,
+	syslog-log/test/system/linux/msglogtest.sh,
+	syslog-log/util/sysloglogutil.c, syslog-log/util/sysloglogutil.h,
+	syslog-log/util/syslogtimeparse.c, syslog-service/makefile,
+	syslog-service/test/system/linux/Syslog_Service.system:
+
+	[no log message]
+
+2004-05-05  sharada-oss
+
+	* syslog-conf/mof/makefile.pegasus,
+	syslog-log/mof/makefile.pegasus,
+	syslog-service/mof/makefile.pegasus:
+
+	[no log message]
+
+2004-05-04  sharada-oss
+
+	* README, syslog-conf/mof/Syslog_ConfigurationRegistration.mof,
+	syslog-conf/test/test-cmpi-syslog-conf.sh,
+	syslog-log/mof/Syslog_LogRegistration.mof,
+	syslog-log/test/test-cmpi-syslog-log.sh,
+	syslog-service/mof/Syslog_ServiceRegistration.mof,
+	syslog-service/test/test-cmpi-syslog-service.sh,
+	syslog-service/util/syslogserviceutil.c:
+
+	[no log message]
+
+2004-04-28  Viktor Mihajlovski <mihajlov@de.ibm.com>
+
+	* syslog-conf/makefile, syslog-log/makefile,
+	syslog-service/makefile:
+
+	Fixed the makefiles to use COMMONINC as well.
+
+2004-04-21  sharada-oss
+
+	* INSTALL, README, setting.cmpi, syslog-conf/README,
+	syslog-conf/Syslog_ConfUtils.c,
+	syslog-conf/mof/Syslog_Configuration.mof,
+	syslog-conf/test/makefile, syslog-conf/test/readme,
+	syslog-conf/test/test-cmpi-syslog-conf.sh,
+	syslog-conf/test/cim/Syslog_Configuration.cim,
+	syslog-conf/test/cim/Syslog_Setting.cim,
+	syslog-conf/test/cim/Syslog_SettingContext.cim,
+	syslog-conf/test/system/linux/Syslog_Configuration.system,
+	syslog-conf/test/system/linux/Syslog_Setting.system,
+	syslog-conf/test/system/linux/Syslog_SettingContext.system,
+	syslog-conf/test/system/linux/setting,
+	syslog-conf/test/system/linux/setting.c,
+	syslog-conf/util/syslogconfutil.c, syslog-log/README,
+	syslog-log/mof/makefile.pegasus, syslog-log/test/readme,
+	syslog-log/test/test-cmpi-syslog-log.sh,
+	syslog-log/test/cim/Syslog_LogRecord.cim,
+	syslog-log/test/cim/Syslog_MessageLog.cim,
+	syslog-log/test/cim/Syslog_RecordInLog.cim,
+	syslog-log/test/system/linux/Syslog_LogRecord.system,
+	syslog-log/test/system/linux/Syslog_MessageLog.pl,
+	syslog-log/test/system/linux/Syslog_MessageLog.system,
+	syslog-log/test/system/linux/Syslog_RecordInLog.system,
+	syslog-log/test/system/linux/logrecord.sh,
+	syslog-log/test/system/linux/messagelog.sh,
+	syslog-log/util/sysloglogutil.c, syslog-service/README,
+	syslog-service/Syslog_ServiceProcess.c, syslog-service/makefile,
+	syslog-service/mof/makefile.pegasus, syslog-service/test/readme,
+	syslog-service/test/test-cmpi-syslog-service.sh,
+	syslog-service/test/cim/Syslog_Service.cim,
+	syslog-service/test/system/linux/Syslog_Service.system,
+	syslog-service/util/syslogserviceutil.c:
+
+	[no log message]
+
+2004-03-31  sharada-oss
+
+	* syslog-conf/mof/makefile:
+
+	[no log message]
+
+2004-03-31  sharada-oss
+
+	* setting.cmpi, syslog-conf/test/makefile,
+	syslog-log/test/makefile, syslog-service/test/makefile:
+
+	[no log message]
+
+2004-03-31  sharada-oss
+
+	* syslog-log/: mof/Syslog_Log.mof, mof/Syslog_LogRegistration.mof,
+	test/readme:
+
+	[no log message]
+
+2004-03-31  sharada-oss
+
+	* syslog-conf/test/readme, syslog-conf/test/runtest_wbemcli.sh,
+	syslog-conf/util/syslogconfutil.c, syslog-log/README:
+
+	[no log message]
+
+2004-03-31  sharada-oss
+
+	* syslog-service/test/readme,
+	syslog-service/test/runtest_pegasus.sh,
+	syslog-service/test/runtest_wbemcli.sh, syslog-conf/README,
+	syslog-conf/mof/Syslog_Configuration.mof,
+	syslog-conf/mof/Syslog_ConfigurationRegistration.mof:
+
+	[no log message]
+
+2004-03-31  sharada-oss
+
+	* INSTALL, README, syslog-service/README,
+	syslog-service/mof/Syslog_ServiceRegistration.mof:
+
+	[no log message]
+
+2004-03-27  Viktor Mihajlovski <mihajlov@de.ibm.com>
+
+	* env, env.pegasus, env.snia, makefile, pegasus_build,
+	setting.cmpi, snia_build, syslog-conf/makefile,
+	syslog-conf/pegasus_build, syslog-conf/snia_build,
+	syslog-conf/mof/makefile, syslog-conf/mof/makefile.pegasus,
+	syslog-conf/mof/makefile.snia, syslog-conf/mof/makefile.standalone,
+	syslog-conf/util/makefile, syslog-log/makefile,
+	syslog-log/pegasus_build, syslog-log/snia_build,
+	syslog-log/mof/makefile, syslog-log/mof/makefile.pegasus,
+	syslog-log/mof/makefile.snia, syslog-log/mof/makefile.standalone,
+	syslog-log/util/makefile, syslog-service/makefile,
+	syslog-service/pegasus_build, syslog-service/snia_build,
+	syslog-service/mof/makefile, syslog-service/mof/makefile.pegasus,
+	syslog-service/mof/makefile.snia,
+	syslog-service/mof/makefile.standalone,
+	syslog-service/util/makefile:
+
+	Restructured makefile process and added RPM spec.
+
+2004-02-06  sharada-oss
+
+	* syslog-conf/test/: runtest_pegasus.sh, runtest_wbemcli.sh:
+
+	[no log message]
+
+2004-02-06  sharada-oss
+
+	* README, syslog-service/test/runtest_pegasus.sh:
+
+	[no log message]
+
+2004-01-30  sharada-oss
+
+	* syslog-service/mof/Syslog_ServiceRegistration.mof,
+	syslog-conf/mof/Syslog_ConfigurationRegistration.mof:
+
+	[no log message]
+
+2004-01-09  sharada-oss
+
+	* README, syslog-service/README,
+	syslog-service/mof/Syslog_Service.mof,
+	syslog-service/util/makefile,
+	syslog-service/util/syslog-service.sh,
+	syslog-service/util/syslogserviceutil.c:
+
+	[no log message]
+
+2003-12-12  Viktor Mihajlovski <mihajlov@de.ibm.com>
+
+	* INSTALL, README, env, env.pegasus, env.snia, makefile,
+	pegasus_build, rules, snia_build, syslog-conf/Syslog_ConfUtils.c,
+	syslog-conf/Syslog_ConfUtils.h, syslog-conf/Syslog_Configuration.c,
+	syslog-conf/Syslog_Setting.c, syslog-conf/makefile,
+	syslog-conf/README, syslog-conf/Syslog_SettingContext.c,
+	syslog-conf/pegasus_build, syslog-conf/snia_build,
+	syslog-conf/mof/Syslog_Configuration.mof,
+	syslog-conf/mof/Syslog_ConfigurationRegistration.mof,
+	syslog-conf/mof/makefile, syslog-conf/mof/makefile.pegasus,
+	syslog-conf/mof/makefile.snia, syslog-conf/test/readme,
+	syslog-conf/test/runtest_pegasus.sh,
+	syslog-conf/test/runtest_wbemcli.sh, syslog-conf/util/makefile,
+	syslog-conf/util/syslogconfutil.c,
+	syslog-conf/util/syslogconfutil.h,
+	syslog-conf/util/syslogsettingparse.c, syslog-log/README,
+	syslog-log/Syslog_LogRecord.c, syslog-log/Syslog_LogUtils.c,
+	syslog-log/Syslog_LogUtils.h, syslog-log/Syslog_MessageLog.c,
+	syslog-log/Syslog_RecordInLog.c, syslog-log/makefile,
+	syslog-log/pegasus_build, syslog-log/snia_build,
+	syslog-log/mof/Syslog_Log.mof,
+	syslog-log/mof/Syslog_LogRegistration.mof, syslog-log/mof/makefile,
+	syslog-log/mof/makefile.pegasus, syslog-log/mof/makefile.snia,
+	syslog-log/test/readme, syslog-log/test/runtest_pegasus.sh,
+	syslog-log/test/runtest_wbemcli.sh, syslog-log/util/makefile,
+	syslog-log/util/sysloglogutil.c, syslog-log/util/sysloglogutil.h,
+	syslog-log/util/syslogtimeparse.c, syslog-service/README,
+	syslog-service/Syslog_Service.c,
+	syslog-service/Syslog_ServiceProcess.c,
+	syslog-service/Syslog_ServiceUtils.c,
+	syslog-service/Syslog_ServiceUtils.h, syslog-service/makefile,
+	syslog-service/pegasus_build, syslog-service/snia_build,
+	syslog-service/mof/Syslog_Service.mof,
+	syslog-service/mof/Syslog_ServiceRegistration.mof,
+	syslog-service/mof/makefile, syslog-service/mof/makefile.pegasus,
+	syslog-service/mof/makefile.snia, syslog-service/test/readme,
+	syslog-service/test/runtest_pegasus.sh,
+	syslog-service/test/runtest_wbemcli.sh,
+	syslog-service/util/makefile,
+	syslog-service/util/syslogserviceutil.c,
+	syslog-service/util/syslogserviceutil.h:
+
+	Initial revision
+
+2003-12-12  Viktor Mihajlovski <mihajlov@de.ibm.com>
+
+	* INSTALL, README, env, env.pegasus, env.snia, makefile,
+	pegasus_build, rules, snia_build, syslog-conf/Syslog_ConfUtils.c,
+	syslog-conf/Syslog_ConfUtils.h, syslog-conf/Syslog_Configuration.c,
+	syslog-conf/Syslog_Setting.c, syslog-conf/makefile,
+	syslog-conf/README, syslog-conf/Syslog_SettingContext.c,
+	syslog-conf/pegasus_build, syslog-conf/snia_build,
+	syslog-conf/mof/Syslog_Configuration.mof,
+	syslog-conf/mof/Syslog_ConfigurationRegistration.mof,
+	syslog-conf/mof/makefile, syslog-conf/mof/makefile.pegasus,
+	syslog-conf/mof/makefile.snia, syslog-conf/test/readme,
+	syslog-conf/test/runtest_pegasus.sh,
+	syslog-conf/test/runtest_wbemcli.sh, syslog-conf/util/makefile,
+	syslog-conf/util/syslogconfutil.c,
+	syslog-conf/util/syslogconfutil.h,
+	syslog-conf/util/syslogsettingparse.c, syslog-log/README,
+	syslog-log/Syslog_LogRecord.c, syslog-log/Syslog_LogUtils.c,
+	syslog-log/Syslog_LogUtils.h, syslog-log/Syslog_MessageLog.c,
+	syslog-log/Syslog_RecordInLog.c, syslog-log/makefile,
+	syslog-log/pegasus_build, syslog-log/snia_build,
+	syslog-log/mof/Syslog_Log.mof,
+	syslog-log/mof/Syslog_LogRegistration.mof, syslog-log/mof/makefile,
+	syslog-log/mof/makefile.pegasus, syslog-log/mof/makefile.snia,
+	syslog-log/test/readme, syslog-log/test/runtest_pegasus.sh,
+	syslog-log/test/runtest_wbemcli.sh, syslog-log/util/makefile,
+	syslog-log/util/sysloglogutil.c, syslog-log/util/sysloglogutil.h,
+	syslog-log/util/syslogtimeparse.c, syslog-service/README,
+	syslog-service/Syslog_Service.c,
+	syslog-service/Syslog_ServiceProcess.c,
+	syslog-service/Syslog_ServiceUtils.c,
+	syslog-service/Syslog_ServiceUtils.h, syslog-service/makefile,
+	syslog-service/pegasus_build, syslog-service/snia_build,
+	syslog-service/mof/Syslog_Service.mof,
+	syslog-service/mof/Syslog_ServiceRegistration.mof,
+	syslog-service/mof/makefile, syslog-service/mof/makefile.pegasus,
+	syslog-service/mof/makefile.snia, syslog-service/test/readme,
+	syslog-service/test/runtest_pegasus.sh,
+	syslog-service/test/runtest_wbemcli.sh,
+	syslog-service/util/makefile,
+	syslog-service/util/syslogserviceutil.c,
+	syslog-service/util/syslogserviceutil.h:
+
+	Syslog Instrumentation comprises: - Service Management
+	Instrumentations - Configuration Management Instrumentation - Log
+	Data Instrumentation
+

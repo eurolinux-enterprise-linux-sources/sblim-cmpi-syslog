@@ -1,0 +1,59 @@
+//
+// Syslog_Configuration.mof
+//
+// Copyright (c) IBM Corp. 2003, 2009
+//
+// THIS FILE IS PROVIDED UNDER THE TERMS OF THE ECLIPSE PUBLIC LICENSE
+// ("AGREEMENT"). ANY USE, REPRODUCTION OR DISTRIBUTION OF THIS FILE
+// CONSTITUTES RECIPIENTS ACCEPTANCE OF THE AGREEMENT.
+//
+// You can obtain a current copy of the Eclipse Public License from
+// http://www.opensource.org/licenses/eclipse-1.0.php
+//
+// Author: R Sharada <sharada@in.ibm.com>
+//
+// Interface Type: Common Manageability Programming Interface ( CMPI )
+//
+// Description: CIM Classes for Linux Syslog Service Instrumentation
+//
+
+
+// Syslog_Configuration
+
+[Description("Class representing Syslog Configuration"),
+ Provider("cmpi:Syslog_Configuration")]
+class Syslog_Configuration : CIM_Configuration
+{
+  [Description("Names the logical configuration for syslog - conf filename"),
+   Override("Name"), Key]
+  String Name;
+};
+
+// Syslog_Setting 
+
+[Description("Class representing Syslog Configuration Setting"),
+ Provider("cmpi:Syslog_Setting")]
+class Syslog_Setting : CIM_Setting
+{
+ [ Key ]
+ String Facility;
+ [ Key ]
+ String Priority;
+ [ Key ]
+ String Target;
+};
+                                                                                
+// Syslog_SettingContext 
+
+[Association,
+ Description("Association between Syslog Configuration and Setting"),
+ Provider("cmpi:Syslog_SettingContext")]
+// Association, Aggregation]
+class Syslog_SettingContext : CIM_SettingContext
+{
+  [Description("The Syslog Server Configuration"), Override("Context")]
+  Syslog_Configuration REF Context;
+  [Description("The Syslog Server Setting"), Override("Setting")]
+  Syslog_Setting REF Setting;
+};
+

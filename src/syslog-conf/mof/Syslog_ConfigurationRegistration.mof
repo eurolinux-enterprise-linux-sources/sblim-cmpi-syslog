@@ -1,0 +1,135 @@
+//
+// Syslog_ConfigurationRegistration.mof
+//
+// Copyright (c) IBM Corp. 2003, 2009
+//
+// THIS FILE IS PROVIDED UNDER THE TERMS OF THE ECLIPSE PUBLIC LICENSE
+// ("AGREEMENT"). ANY USE, REPRODUCTION OR DISTRIBUTION OF THIS FILE
+// CONSTITUTES RECIPIENTS ACCEPTANCE OF THE AGREEMENT.
+//
+// You can obtain a current copy of the Eclipse Public License from
+// http://www.opensource.org/licenses/eclipse-1.0.php
+//
+// Author: R Sharada <sharada@in.ibm.com>
+//
+// Interface Type: Common Manageability Programming Interface ( CMPI )
+//
+// Description: CIM Classes for Linux Syslog Configuration Instrumentation
+//
+
+
+#pragma locale ("en_US")
+#pragma namespace ("root/PG_InterOp")
+
+// Syslog_Configuration 
+
+instance of PG_ProviderModule
+{
+   Name = "Syslog_ConfigurationProviderModule";
+   //The library name on disk
+   Location = "Syslog_Configuration";
+   Vendor = "SBLIM";
+   Version = "2.0.0";
+   InterfaceType = "CMPI";
+   InterfaceVersion = "2.0.0";
+};
+
+instance of PG_Provider
+{
+   //The provider module as defined in PG_ProviderModule
+   ProviderModuleName = "Syslog_ConfigurationProviderModule";
+   // The provider name as referenced in the code
+   Name = "Syslog_Configuration";
+};
+
+instance of PG_ProviderCapabilities
+{
+   //The provider module as defined in PG_ProviderModule
+   ProviderModuleName = "Syslog_ConfigurationProviderModule";
+   //The provider name as defined in PG_Provider
+   ProviderName = "Syslog_Configuration";
+   CapabilityID = "1";
+   //Name of the CIM class as defined in the mof
+   ClassName = "Syslog_Configuration";
+   Namespaces = {"root/cimv2"};
+   ProviderType = { 2 }; // Instance
+   SupportedProperties = NULL; // All properties
+   SupportedMethods = NULL; // All methods
+};
+
+
+// Syslog_Setting 
+
+instance of PG_ProviderModule
+{
+   Name = "Syslog_SettingProviderModule";
+   //The library name on disk
+   Location = "Syslog_Setting";
+   Vendor = "SBLIM";
+   Version = "2.0.0";
+   InterfaceType = "CMPI";
+   InterfaceVersion = "2.0.0";
+};
+
+instance of PG_Provider
+{
+   //The provider module as defined in PG_ProviderModule
+   ProviderModuleName = "Syslog_SettingProviderModule";
+   // The provider name as referenced in the code
+   Name = "Syslog_Setting";
+};
+
+instance of PG_ProviderCapabilities
+{
+   //The provider module as defined in PG_ProviderModule
+   ProviderModuleName = "Syslog_SettingProviderModule";
+   //The provider name as defined in PG_Provider
+   ProviderName = "Syslog_Setting";
+   CapabilityID = "1";
+   //Name of the CIM class as defined in the mof
+   ClassName = "Syslog_Setting";
+   Namespaces = {"root/cimv2"};
+   ProviderType = { 2 }; // Instance
+   SupportedProperties = NULL; // All properties
+   SupportedMethods = NULL; // All methods
+};
+
+
+// Syslog_SettingContext 
+
+instance of PG_ProviderModule
+{
+   Name = "Syslog_SettingContextProviderModule";
+   //The library name on disk
+   Location = "Syslog_SettingContext";
+   Vendor = "SBLIM";
+   Version = "2.0.0";
+   InterfaceType = "CMPI";
+   InterfaceVersion = "2.0.0";
+};
+
+instance of PG_Provider
+{
+   //The provider module as defined in PG_ProviderModule
+   ProviderModuleName = "Syslog_SettingContextProviderModule";
+   // The provider name as referenced in the code
+   Name = "Syslog_SettingContext";
+};
+
+instance of PG_ProviderCapabilities
+{
+   //The provider module as defined in PG_ProviderModule
+   ProviderModuleName = "Syslog_SettingContextProviderModule";
+   //The provider name as defined in PG_Provider
+   ProviderName = "Syslog_SettingContext";
+   CapabilityID = "1";
+   //Name of the CIM class as defined in the mof
+   ClassName = "Syslog_SettingContext";
+   Namespaces = {"root/cimv2"};
+   ProviderType = { 3 }; // Assoc
+   SupportedProperties = NULL; // All properties
+   SupportedMethods = NULL; // All methods
+};
+
+
+

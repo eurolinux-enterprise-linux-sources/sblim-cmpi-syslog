@@ -1,0 +1,135 @@
+//
+// Syslog_LogResgistration.mof
+//
+// Copyright (c) IBM Corp. 2003, 2009
+//
+// THIS FILE IS PROVIDED UNDER THE TERMS OF THE ECLIPSE PUBLIC LICENSE
+// ("AGREEMENT"). ANY USE, REPRODUCTION OR DISTRIBUTION OF THIS FILE
+// CONSTITUTES RECIPIENTS ACCEPTANCE OF THE AGREEMENT.
+//
+// You can obtain a current copy of the Eclipse Public License from
+// http://www.opensource.org/licenses/eclipse-1.0.php
+//
+// Author: R Sharada <sharada@in.ibm.com>
+//
+// Interface Type: Common Manageability Programming Interface ( CMPI )
+//
+// Description: CIM Classes for Linux Syslog Log Instrumentation
+// ( This is used for registration of classes in Pegasus )
+//
+
+
+#pragma locale ("en_US")
+#pragma namespace ("root/PG_InterOp")
+
+// Syslog_MessageLog 
+
+instance of PG_ProviderModule
+{
+   Name = "Syslog_MessageLogProviderModule";
+   //The library name on disk
+   Location = "Syslog_MessageLog";
+   Vendor = "SBLIM";
+   Version = "2.0.0";
+   InterfaceType = "CMPI";
+   InterfaceVersion = "2.0.0";
+};
+
+instance of PG_Provider
+{
+   //The provider module as defined in PG_ProviderModule
+   ProviderModuleName = "Syslog_MessageLogProviderModule";
+   // The provider name as referenced in the code
+   Name = "Syslog_MessageLog";
+};
+
+instance of PG_ProviderCapabilities
+{
+   //The provider module as defined in PG_ProviderModule
+   ProviderModuleName = "Syslog_MessageLogProviderModule";
+   //The provider name as defined in PG_Provider
+   ProviderName = "Syslog_MessageLog";
+   CapabilityID = "1";
+   //Name of the CIM class as defined in the mof
+   ClassName = "Syslog_MessageLog";
+   Namespaces = {"root/cimv2"};
+   ProviderType = { 2 }; // Instance
+   SupportedProperties = NULL; // All properties
+   SupportedMethods = NULL; // All methods
+};
+
+
+// Syslog_LogRecord 
+
+instance of PG_ProviderModule
+{
+   Name = "Syslog_LogRecordProviderModule";
+   //The library name on disk
+   Location = "Syslog_LogRecord";
+   Vendor = "SBLIM";
+   Version = "2.0.0";
+   InterfaceType = "CMPI";
+   InterfaceVersion = "2.0.0";
+};
+
+instance of PG_Provider
+{
+   //The provider module as defined in PG_ProviderModule
+   ProviderModuleName = "Syslog_LogRecordProviderModule";
+   // The provider name as referenced in the code
+   Name = "Syslog_LogRecord";
+};
+
+instance of PG_ProviderCapabilities
+{
+   //The provider module as defined in PG_ProviderModule
+   ProviderModuleName = "Syslog_LogRecordProviderModule";
+   //The provider name as defined in PG_Provider
+   ProviderName = "Syslog_LogRecord";
+   CapabilityID = "1";
+   //Name of the CIM class as defined in the mof
+   ClassName = "Syslog_LogRecord";
+   Namespaces = {"root/cimv2"};
+   ProviderType = { 2 }; // Instance
+   SupportedProperties = NULL; // All properties
+   SupportedMethods = NULL; // All methods
+};
+
+// Syslog_RecordInLog 
+
+instance of PG_ProviderModule
+{
+   Name = "Syslog_RecordInLogProviderModule";
+   //The library name on disk
+   Location = "Syslog_RecordInLog";
+   Vendor = "SBLIM";
+   Version = "2.0.0";
+   InterfaceType = "CMPI";
+   InterfaceVersion = "2.0.0";
+};
+
+instance of PG_Provider
+{
+   //The provider module as defined in PG_ProviderModule
+   ProviderModuleName = "Syslog_RecordInLogProviderModule";
+   // The provider name as referenced in the code
+   Name = "Syslog_RecordInLog";
+};
+
+instance of PG_ProviderCapabilities
+{
+   //The provider module as defined in PG_ProviderModule
+   ProviderModuleName = "Syslog_RecordInLogProviderModule";
+   //The provider name as defined in PG_Provider
+   ProviderName = "Syslog_RecordInLog";
+   CapabilityID = "1";
+   //Name of the CIM class as defined in the mof
+   ClassName = "Syslog_RecordInLog";
+   Namespaces = {"root/cimv2"};
+   ProviderType = { 3 }; // Assoc
+   SupportedProperties = NULL; // All properties
+   SupportedMethods = NULL; // All methods
+};
+
+
+

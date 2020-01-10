@@ -1,0 +1,128 @@
+Syslog Configuration Instrumentation README
+This instrumentation allows management of syslog configuration file via CIM.
+
+Prerequisites / Dependencies :
+
+- CIM Schema
+- CMPI
+
+Instrumentation Description :
+
+This version works on the default /etc/syslog.conf configuration file.
+This version has been tested on Red Hat Linux ( version 7.3 is the test 
+environment setup version ) and SuSE ( SLES 8 is the test environment setup 
+version ) on intel platforms.
+
+The provider provides the following capabilities - Instance and Association
+Interfaces implementation.
+
+Instance Interfaces 
+The Syslog_Configuration class models the configuration file, and the 
+Syslog_Setting class models the syslog setting or filter rule.
+
+Syslog_Configuration class
+1. EnumerateInstances - List instancens for the syslog configuration file
+   There is one one syslog config file on the system at any given point in time.
+   Limitation: Currently the filename and the path is hardcoded in the code to
+   the default, i.e., /etc/syslog.conf.
+2. EnumerateInstanceNames - List names of instances of the syslog configuration
+   file. This returns the objectpath of the instance.
+3. GetInstance -  Get the configuration file instance. 
+
+Syslog_Setting class
+4. EnumerateInstances - List instances of syslog setting, modeled as 
+   objects of the CIM_Setting class. This returns all the rules in the 
+   syslog.conf file, splitting them as <facility.priority target>. So, multiple
+   syslog rules collated on a single line of the conf file, are split for the
+   enumeration into individual tuples of the above mentioned type. The main
+   file however is not modified or changed by this action.
+5. EnumerateInstanceNames - List names of instances of syslog setting. This
+   returns the objectpath of the instances.
+6. GetInstance - Get instance of a setting, based on 3 key values - facility, 
+   priority and target.
+   Limitation: Since all three attributes of a rule have been defined as keys, 
+   we do not support any modify or update instance. Instead, create instance and
+   delete instance are supported, which cumulatively perform the task of update
+   instance.
+7. CreateInstance - Creates a new rule instance in the file, if it does not 
+   exist. If the target exists, it appends to the selectors list for the target
+   on the same line. Else, a new line is created in the config file. For testing
+   and safety purpose, currently a copy of the syslog.conf file is made in the
+   /etc directory ( syslogtest.conf ) and all operations are performed on it. 
+   The final writeback is also done to this file.
+   This can be changed easily to write back to the original syslog.conf file.
+   Limitation : As before, filenames and pathnames are hardcoded for now. Also,
+   we make use of some temporary files, created under /tmp for the intermediate
+   parsing of the conf file. These files are later cleaned up.
+8. DeleteInstance - Deletes an instance of a rule ( a tuple, containing a 
+   facility.priority and a target value ), where the facility is a single 
+   facility and not a compound one. Deletes the facility according to its 
+   position in the configuration file and writes back to the file.
+
+Association Interfaces
+   The Syslog_SettingContext class associates the configuration with the 
+   settings.
+
+Syslog_SettingContext class
+9. Associators - Given a class instance, returns all the instances of the 
+   associated class. For example, given the configuration file instance, 
+   returns all the settings associated with that configuration file instance.
+10. AssociatorNames - Given a class instance, returns all the instancenames of
+   the associated class.
+11. References - Given a class instance, returns instances of the association
+   class.
+12. ReferenceNames - Given a class instance, returns the instancenames of the
+   associated association class.
+
+Class Definitions / Schema :
+
+- mof/Linux_Configuration.mof
+- mof/Linux_ConfigurationRegistration.mof ( Registration class for Pegasus )
+
+Instrumentation Libraries :
+
+- Syslog_Configuration.c
+- Syslog_Setting.c
+- Syslog_SettingContext.c
+- Syslog_ConfUtils.c
+
+Utility Libraries :
+
+- util/syslogconfutil.c
+- util/syslogsettingparse.c
+
+Old Test Script :
+
+- test/runtest_pegasus.sh ( test script for Pegasus )
+- test/runtest_wbemcli.sh ( test script for SNIA )
+
+SBLIM Testsuite enablement :
+                                                                                
+- test/test-cmpi-syslog-conf.sh ( high level test script )
+- cim/Syslog_Configuration.cim ( .cim file for Syslog_Configuration class )
+- cim/Syslog_Setting.cim ( .cim file for Syslog_Setting class )
+- cim/Syslog_SettingContext.cim ( .cim file for Syslog_SettingContext class )
+- system/linux/Syslog_Configuration.system ( .system file for Syslog_Configurati  on class )
+- system/linux/Syslog_Setting.system ( .system file for Syslog_Setting class )
+- system/linux/Syslog_SettingContext.system ( .system file for Syslog_SettingCon  text class )
+- system/linux/setting.c ( c source file for parsing setting rules )
+- system/linux/setting ( output file for setting.c )
+
+Build Files :
+                                                                                
+- makefile ( generic makefile for building the syslog configuration code )
+- mof/makefile.pegasus ( makefile for building and installing mof for Pegasus.
+  To be copied over as mof/makefile )
+- mof/makefile.standalone ( makefile for building and installing mof for
+  non-Pegasus CIMOM environment. To be copied over as mof/makefile )
+- util/makefile ( makefile for building the utility libraries )
+- pegasus_build ( easy script for clean, build and install of syslog 
+  configuration code for Pegasus )
+- snia_build ( easy script for clean, build and install of syslog configuration
+  code for SNIA )
+
+Text Files :
+                                                                                
+- README ( This file )
+- test/readme ( text file with information about the tests )
+

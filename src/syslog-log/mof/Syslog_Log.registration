@@ -1,0 +1,4 @@
+# Classname Namespace Providername Libraryname Capabilities ...
+Syslog_MessageLog root/cimv2 Syslog_MessageLog Syslog_MessageLog instance
+Syslog_RecordInLog root/cimv2 Syslog_RecordInLog Syslog_RecordInLog association
+Syslog_LogRecord root/cimv2 Syslog_LogRecord Syslog_LogRecord instance

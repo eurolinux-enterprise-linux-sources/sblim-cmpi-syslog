@@ -1,0 +1,20 @@
+********************************************************************************
+association : Syslog_RecordInLog
+objectPath : Syslog_RecordInLog.MessageLog="Syslog_MessageLog.CreationClassName=Syslog_MessageLog,Name=/var/log/messages",LogRecord="Syslog_LogRecord.LogCreationClassName=Syslog_MessageLog,LogName=/var/log/messages,CreationClassName=Syslog_LogRecord,RecordId=1,MessageTimestamp=20040320185331.000000-000
+sourceRole : MessageLog 
+targetRole : LogRecord
+sourceClass : Syslog_MessageLog
+targetClass : Syslog_LogRecord
+
+--------------------------------------------------------------------------------
+Association                                                      associatorNames
+                                                                                
+--------------------------------------------------------------------------------
+Association                                                          associators
+                                                                                
+--------------------------------------------------------------------------------
+Association                                                       referenceNames
+                                                                                
+--------------------------------------------------------------------------------
+Association                                                           references
+

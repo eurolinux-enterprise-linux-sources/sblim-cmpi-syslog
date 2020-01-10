@@ -1,0 +1,92 @@
+SBLIM Testsuite Enablement
+--------------------------
+                                                                                
+The Syslog_Service provider is integrated into the SBLIM Testsuite and can be
+tested via the sblim testsuite.
+                                                                                
+Prerequisites :
+                                                                                
+- sblim-cmpi-base package propertly installed
+- testsuite package
+                                                                                
+make test : test the existence of a testsuite directory
+                                                                                
+make install : install the input files into the corresponding testsuite
+directories
+                                                                                
+make uninstall : delete the cmpi-base specific files out of the testsuite
+directories
+                                                                                
+Run the test in the testsuite dir by executing . test-cmpi-syslog-log.sh
+                                                                                
+NOTE: The sblim testsuite tests do not test the complete functionality of the
+provider.
+
+-------------------------------------------------------------------------------
+                                                                                
+Old Test Scripts
+-----------------
+
+This directory contains the simple shell scripts that test the provider using
+the command line interface.
+The pegasus script has to be edited to put in the values for Pegasus_XXX for
+your test environment.
+The script restricts itself to testing only those interfaces that are supported by the clis.
+We have two scripts -
+   - runtest_pegasus.sh ( which uses the pegasus CLI )
+   - runtest_wbemcli.sh ( which uses the sblim wbemcli )
+
+This test suite tests the syslog log provider interfaces.
+The instance and association provider interfaces are tested in this script.
+
+The instance interfaces tested are:
+   - enuminstances ( for syslog_messagelog and syslog_logrecord )
+   - enuminstancenames ( for syslog_messagelog and syslog_logrecord )
+   - getinstance ( for syslog_messagelog and syslog_logrecord )
+Both Pegasus CLI and Sblim wbemcli support the above mentioned instance tests
+   
+The association interfaces tested are:
+   - associators ( for syslog_messagelog and syslog_logrecord )
+   - associatornames ( for syslog_messagelog and syslog_logrecord )
+   - references ( for syslog_messagelog and syslog_logrecord )
+   - referencenames ( for syslog_messagelog and syslog_logrecord )
+Both Pegasus CLI and Sblim wbemcli support the above mentioned association tests
+
+Note: Currently we use cimmofl utility to register the Pegasus mofs. Hence, for
+Pegasus, any registration of the provider, has to be followed by a server
+restart before running these tests.
+                                                                                
+Example:
+Here, we present a sample of values for running the tests on Pegasus using CLI.
+This is how the screen looks when the runtest_pegasus.sh script is run.
+Note: The script runtest_wbemcli.sh is similar to the runtest_pegasus.sh script
+and hence will run like the example below.
+                                                                                
+[root@bhrigus test]# ./runtest_pegasus.sh
+This is the cli test for syslog log provider classes - messagelog, logrecord and recordinlog
+There are two types of test for this provider
+1. Instance Tests 2. Association Tests
+Give your input as integer values - 1 or 2
+1
+Value entered:1
+Enter the hostname on which the server is running. Give the FQDN ( Fully
+Qualified Domain Name )
+bhrigus.in.ibm.com
+HostName:bhrigus.in.ibm.com
+For messagelog getinstance and assoc interfaces, enter a log name ( valid
+log name that exists in the /etc/syslog.conf file )
+/var/log/messages
+For logrecord getinstance and assoc interfaces, enter the keys for the logrecord class ( the logname, recordid, and timestamp values ), each on a new line
+/var/log/messages
+16
+20040215120840.000000-000
+.
+.
+. ( the output of the tests is skipped as it produces a large amount of data )
+.
+.
+root@bhrigus test]#
+
+
+Note: The timestamp value for the logrecord has to be in the MessageTimeStamp
+format as understood by CIM. 

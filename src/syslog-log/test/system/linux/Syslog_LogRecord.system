@@ -1,0 +1,14 @@
+********************************************************************************
+class : Syslog_LogRecord
+
+--------------------------------------------------------------------------------
+Syslog_LogRecord : -lt -cmd logrecord.sh 
+
+--------------------------------------------------------------------------------
+LogCreationClassName : -eq Syslog_MessageLog
+CreationClassName : -eq Syslog_LogRecord
+LogName : -set
+RecordId : -set
+MessageTimestamp : -set
+
+

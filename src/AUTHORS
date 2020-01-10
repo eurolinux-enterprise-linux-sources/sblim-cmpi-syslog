@@ -1,0 +1,6 @@
+The cmpi-syslog provider package was originally written by iR Sharada 
+<rsharada@in.ibm.com>.
+
+Contributions:
+
+Convert to autoconf by Hien Nguyen <hien@us.ibm.com> 

@@ -1,0 +1,13 @@
+********************************************************************************
+class : Syslog_MessageLog
+objectPath : Syslog_MessageLog.CreationClassName=Syslog_MessageLog,Name=/var/log/messages
+
+--------------------------------------------------------------------------------
+Instance                                                       enumInstanceNames
+
+--------------------------------------------------------------------------------
+Instance                                                           enumInstances
+
+--------------------------------------------------------------------------------
+Instance                                                                     get
+

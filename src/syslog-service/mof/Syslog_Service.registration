@@ -1,0 +1,3 @@
+# Classname Namespace Providername Libraryname Capabilities ...
+Syslog_ServiceProcess root/cimv2 Syslog_ServiceProcess Syslog_ServiceProcess association
+Syslog_Service root/cimv2 Syslog_Service Syslog_Service instance method
