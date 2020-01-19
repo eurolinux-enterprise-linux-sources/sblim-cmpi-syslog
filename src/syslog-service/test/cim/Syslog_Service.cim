@@ -1,0 +1,14 @@
+********************************************************************************
+class : Syslog_Service
+objectPath : Syslog_Service.SystemCreationClassName=CIM_UnitaryComputerSystem,systemName=testsystem,CreationClassName=Syslog_Service,Name=syslog
+
+--------------------------------------------------------------------------------
+Instance                                                       enumInstanceNames
+
+--------------------------------------------------------------------------------
+Instance                                                           enumInstances
+
+--------------------------------------------------------------------------------
+Instance                                                                     get
+
+

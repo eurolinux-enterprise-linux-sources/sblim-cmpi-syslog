@@ -1,0 +1,100 @@
+SBLIM Testsuite Enablement
+--------------------------
+                                                                                
+The Syslog_Conf provider is integrated into the SBLIM Testsuite and can be
+tested via the sblim testsuite.
+                                                                                
+Prerequisites :
+                                                                                
+- sblim-cmpi-base package propertly installed
+- testsuite package
+                                                                                
+make test : test the existence of a testsuite directory
+                                                                                
+make install : install the input files into the corresponding testsuite
+directories
+                                                                                
+make uninstall : delete the cmpi-base specific files out of the testsuite
+directories
+                                                                                
+Run the test in the testsuite dir by executing . test-cmpi-syslog-conf.sh
+
+NOTE: The sblim testsuite tests do not test the complete functionality of the
+provider.
+
+-------------------------------------------------------------------------------
+
+Old Test Scripts
+-----------------
+
+This directory contains the simple shell scripts that test the provider using
+the command line interface.
+The pegasus script has to be edited to put in the values for Pegasus_XXX for
+your test environment.
+The script restricts itself to testing only those interfaces that are supported by the clis.
+We have two scripts -
+   - runtest_pegasus.sh ( which uses the pegasus CLI )
+   - runtest_wbemcli.sh ( which uses the sblim wbemcli )
+
+This test suite tests the syslog conf provider interfaces.
+The instance and association provider interfaces are tested in this script.
+
+The instance interfaces tested are:
+   - enuminstances ( for syslog_configuration and syslog_setting )
+   - enuminstancenames ( for syslog_configuration and syslog_setting )
+   - getinstance ( for syslog_configuration and syslog_setting )
+   - deleteinstance ( for syslog_setting )
+Both Pegasus CLI and Sblim wbemcli support the above mentioned instance tests
+   - createinstance ( for syslog_setting )
+Pegasus CLI does not support createinstance
+wbemcli also does not seem to work correctly with createinstance
+   
+The association interfaces tested are:
+   - associators ( for syslog_configuration and syslog_setting )
+   - associatornames ( for syslog_configuration and syslog_setting )
+   - references ( for syslog_configuration and syslog_setting )
+   - referencenames ( for syslog_configuration and syslog_setting )
+Both Pegasus CLI and Sblim wbemcli support the above mentioned association tests
+
+Note: Currently we use cimmofl utility to register the Pegasus mofs. Hence, for
+Pegasus, any registration of the provider, has to be followed by a server
+restart before running these tests.
+                                                                                
+Example:
+Here, we present a sample of values for running the tests on Pegasus using CLI.
+This is how the screen looks when the runtest_pegasus.sh script is run.
+Note: The script runtest_wbemcli.sh is similar to the runtest_pegasus.sh script
+and hence will run like the example below.
+
+[root@bhrigus test]# ./runtest_pegasus.sh
+This is the cli test for syslog conf provider classes - configuration, setting and settingcontext
+There are two types of test for this provider
+1. Instance Tests 2. Association Tests
+Give your input as integer values - 1 or 2
+1
+Value entered:1
+For setting getinstance, enter the key values for facility, priority and target, each on a new line
+*
+info
+/var/log/messages
+Value entered: * info /var/log/messages
+For setting createinstance and deleteinstance, enter the key values for facility, priority and target, each on a new line
+mail
+none
+/var/log/messages
+Value entered: mail none /var/log/messages
+Running Instance Tests
+.
+.
+. (we skip the output of the ei, ni, and gi tests as it produces large amounts 
+.  of data)
+.
+running ci test
+ Create Instance Not Implemented
+running di test
+[root@bhrigus test]#
+
+
+
+
+

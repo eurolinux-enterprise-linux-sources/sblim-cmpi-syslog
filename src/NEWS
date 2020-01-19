@@ -1,0 +1,61 @@
+Changes in 0.9.0
+================
+
+Bugs Fixed:
+- 2645 No longer create syslogtest.conf during make install
+
+Features Added:
+- 2645 Better support for rsyslog
+- 2645 Support rsyslog with initscript
+
+Changes in 0.8.1
+================
+
+Bugs Fixed:
+- 2839433 sblim-cmpi-syslog crash
+- 2843648 Missing fclose in sblim-cmpi-syslog
+
+Features Added:
+- 3287560 Adding rsyslog support for sblim-cmpi-syslog
+
+Changes in 0.8.0
+================
+
+Bugs:
+- 2688817 cmpi-syslog missing includes
+- 2795176 migrate provider licenses to EPL
+- 2795190 remove autoconf build tools from cvs
+
+
+Changes in 0.7.11
+=================
+
+Bugs:
+- 1411000: syslog provider should not depend on cmpi-base 
+           internal functions.
+- 1615180: check mallocs for success
+
+
+Changes in 0.7.10
+=================
+
+Bugs:
+- 1538474 Fixed memory leaks in syslog configuration parsing
+- 1605163 Configuration enumeration does not clean up /tmp
+          files
+- 1605178 CreateInstance must return an valid object path in
+	  case of success.
+
+
+Changes in 0.7.9
+================
+                                                                                
+Bugs fixed:
+1183805 : Autoconf support added.
+1199129 : Some warning messages were also fixed.
+1449220 : Fixed testsuite failure.
+1449954 : Replaced printfs with debug macro (syslog_debug)
+
+
+
+

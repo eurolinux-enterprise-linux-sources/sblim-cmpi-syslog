@@ -1,0 +1,6 @@
+********************************************************************************
+association : Syslog_SettingContext
+
+--------------------------------------------------------------------------------
+Syslog_Configuration : -target Syslog_Setting -eq -cmd setting |wc -l
+Syslog_Setting : -target Syslog_Configuration -eq 1

@@ -1,0 +1,108 @@
+Syslog Service Instrumentation README
+This instrumentation allows to manage the syslog service via CIM.
+
+Prerequisites / Dependencies :
+
+- CIM Schema
+- CMPI
+- CMPI Sblim Base Instrumentation ( needed for the inheritance from the
+  Linux_UnixProcess class )
+
+Instrumentation Description :
+
+This version works off of the wrapper script syslog-service.sh that is built
+around the distribution specific /etc/init.d/syslog script. It has been tested
+on Red Hat Linux ( version 7.3 is the test environment setup version ) and SuSE
+( SLES 8 is the test environment setup version ) on intel platforms.
+
+The provider provides the following capabilities - Instance, Association and
+Method Interfaces implementation.
+
+Instance Interfaces
+The Syslog_Service class models the syslog service.
+
+Syslog_Service class
+1. EnumerateInstanceNames - List instancenames for the syslog service.
+2. EnumerateInstances - List instances of the syslog service running on the 
+   system. For syslog, the enumeration returns just one instance. Even if the 
+   service is not running, an instance is returned, with the "Started" boolean 
+   variable set to false.
+3. GetInstance - Get the instance of syslog service.
+
+Method Interfaces
+Depending on the Linux distribution ( RedHat or SuSE ), the relevant syslog
+methods are supported.
+The valid syslog methods on RedHat are : start, stop, status, restart, reload
+and condrestart.
+The valid syslog methods on SuSE are : start, stop, status, try-restart,
+restart, force-reload, reload and probe.
+The base cim_service class had two methods, "StartService" and "StopService".
+The rest are defined specifically for syslog in syslog_service class.
+
+4. InvokeMethod - Execute any one of the above methods.
+
+Association Interfaces
+The Syslog_ServiceProcess class associates the syslog service with the processes
+that implement the service on the Linux system.
+
+Syslog_ServiceProcess class
+5. Associators - Given a class instance, return the instances of the associated
+   class. For example, for syslog service, given the service clas, return 
+   instances of all the processes that implement this service.
+6. AssociatorNames - Given a class instance, return all instancenames of the
+   associated class.
+7. References - Given a class instance, return the instances of the association
+   class for each association. For example, for syslog service, given the syslog
+   service, return two instances of the Syslog_ServiceProcess association class,
+   one for each of the processes ( syslogd and klogd ) that implement syslog.
+   So, there will be 2 references, ( syslog<->syslogd ) and ( syslog<->klogd ).
+8. ReferenceNames -Given a class instance, return the instancenames of the
+   association class for each association.
+
+Class Definitions / Schema :
+
+- mof/Linux_Service.mof
+- mof/Linux_ServiceRegistration.mof ( Registration class for Pegasus only )
+
+Instrumentation Libraries ( Sources ):
+
+- Syslog_Service.c
+- Syslog_ServiceProcess.c
+(NOTE : The ServiceProcess Association interfaces are currently not supported )
+- Syslog_ServiceUtils.c
+
+Utility Libraries ( Sources ):
+
+- util/syslogserviceutil.c
+- util/syslog-service.sh ( wrapper script around /etc/init.d/syslog script. The
+  syslog script is distro-specific and varies. This wrapper provides a common
+  interface for the provider to work upon )
+
+Old Test Script :
+
+- test/runtest_pegasus.sh ( test script for Pegasus )
+- test/runtest_wbemcli.sh ( test script for SNIA )
+
+SBLIM Testsuite enablement :
+
+- test/test-cmpi-syslog-service.sh ( high level test script )
+- cim/Syslog_Service.cim ( .cim file for Syslog_Service class )
+- system/linux/Syslog_Service.system ( .system file for Syslog_Service class )
+
+Build Files :
+
+- makefile ( generic makefile for building the syslog service code )
+- mof/makefile.pegasus ( makefile for building and installing mof for Pegasus. 
+  To be copied over as mof/makefile )
+- mof/makefile.standalone ( makefile for building and installing mof for 
+  non-Pegasus CIMOM environment. To be copied over as mof/makefile )
+- util/makefile ( makefile for building the utility libraries )
+- pegasus_build ( easy script for clean, build and install of syslog service 
+  code for Pegasus )
+- snia_build ( easy script for clean, build and install of syslog service code 
+  for SNIA )
+
+Text Files :
+
+- README ( This file )
+- test/readme ( text file with information about the tests )

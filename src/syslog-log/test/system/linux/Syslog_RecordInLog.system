@@ -1,0 +1,6 @@
+********************************************************************************
+association : Syslog_RecordInLog
+
+--------------------------------------------------------------------------------
+Syslog_MessageLog : -target Syslog_LogRecord -lt -cmd logrecord.sh 
+Syslog_LogRecord : -target Syslog_MessageLog -eq 1

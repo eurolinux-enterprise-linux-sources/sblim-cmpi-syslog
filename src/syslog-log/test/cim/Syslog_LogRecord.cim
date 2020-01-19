@@ -1,0 +1,11 @@
+********************************************************************************
+class : Syslog_LogRecord
+objectPath : Syslog_LogRecord.LogCreationClassName=Syslog_MessageLog,LogName=/var/log/messages,CreationClassName=Syslog_LogRecord,RecordId=1,MessageTimestamp=20040320185331.000000-000
+
+--------------------------------------------------------------------------------
+Instance                                                       enumInstanceNames
+
+--------------------------------------------------------------------------------
+Instance                                                           enumInstances
+
+

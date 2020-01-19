@@ -1,0 +1,109 @@
+Syslog Logfile Instrumentation README
+This instrumentation allows viewing of syslog logfiles via CIM.
+
+Prerequisites / Dependencies :
+
+- CIM Schema
+- CMPI
+
+Instrumentation Description :
+This version works with the default /etc/syslog.conf file values
+This version has been tested on Red Hat Linux ( version 7.3 is the test 
+environment setup version ) and SuSE ( SLES 8 is the test environment setup 
+version ) on intel platforms.
+
+The provider provides the following capabilities - Instance and Association
+Interfaces implementation.
+
+Instance Interfaces
+The Syslog_MessageLog class models the syslog log files, and the 
+Syslog_LogRecord class models the individual log records in those files.
+
+Syslog_MessageLog class
+1. EnumerateInstances - List instances of syslog log files, that are defined in
+   /etc/syslog.conf file. 
+   Limitation: For now, the filename and path is a hardcoded value in the code.
+2. EnumerateInstanceNames - List names of instances of the log files. This
+   returns the objectpath of the instances.
+3. GetInstance - Get the instance of the syslog logfile, given the logfile name
+   as key. For now, the Syslog_MessageLog class is simple, with just the name.
+
+Syslog_LogRecord class
+4. EnumerateInstances - List instances of the log records in the logfiles. 
+5. EnumerateInstanceNames - List names of instances of the logrecords. This
+   returns the objectpath of the instances.
+   Note: Enumeration here retrieves all log records from all log files.
+6. GetInstance - Get the instance of a logrecord, given the logname, recordid
+   and timestamp as keys.
+
+Association Interfaces
+The Syslog_RecordInLog class associates the logfile with the logrecords in 
+the logfile.
+
+Syslog_RecordInLog class
+7. Associators - Given a class instance, return all instances of the associated
+   class.
+8. AssociatorNames - Given a class instance, return all the instancenames of the
+   associated class.
+9. References - Given a class instance, return all instances of the association
+   class.
+10. ReferenceNames - Given a class instance, return all instancenames of the
+   association class.
+8. The association class, RecordInLog, associates the log file and the log
+records, in the log file.
+
+Class Definitions / Schema :
+
+- mof/Linux_Log.mof
+- mof/Linux_LogRegistration.mof ( Registration class for Pegasus only )
+
+Instrumentation Libraries :
+
+- Syslog_MessageLog.c
+- Syslog_LogRecord.c
+- Syslog_RecordInLog.c
+- Syslog_LogUtils.c
+
+Utility Libraries :
+
+- util/sysloglogutil.c
+- util/syslogtimeparse.c
+
+Old Test Script :
+                                                                                
+- test/runtest_pegasus.sh ( test script for Pegasus )
+- test/runtest_wbemcli.sh ( test script for SNIA )
+
+SBLIM Testsuite enablement :
+                                                                                
+- test/test-cmpi-syslog-log.sh ( high level test script )
+- cim/Syslog_LogRecord.cim ( .cim file for Syslog_LogRecord class )
+- cim/Syslog_MessageLog.cim ( .cim file for Syslog_MessageLog class )
+- cim/Syslog_RecordInLog.cim ( .cim file for RecordInLog class )
+- system/linux/Syslog_LogRecord.system ( .system file for Syslog_LogRecord )
+- system/linux/Syslog_MessageLog.system ( .system file for Syslog_MessageLog )
+- system/linux/Syslog_RecordInLog.system ( .system file for Syslog_RecordInLog )
+- system/linux/Syslog_MessageLog.pl ( .pl script for Syslog_MessageLog )
+- system/linux/messagelog.sh ( .sh script for Syslog_MessageLog )
+- system/linux/logrecord.sh ( .sh script for Syslog_LogRecord )
+- system/linux/msglogtest.sh ( .sh script for Syslog_MessageLog )
+
+Build Files :
+                                                                                
+- makefile ( generic makefile for building the syslog log code )
+- mof/makefile.pegasus ( makefile for building and installing mof for Pegasus.
+  To be copied over as mof/makefile )
+- mof/makefile.standalone ( makefile for building and installing mof for
+  non-Pegasus CIMOM environment. To be copied over as mof/makefile )
+- util/makefile ( makefile for building the utility libraries )
+- pegasus_build ( easy script for clean, build and install of syslog log code 
+  for Pegasus )
+- snia_build ( easy script for clean, build and install of syslog log code for 
+  SNIA )
+                                                                                
+Text Files :
+                                                                                
+- README ( This file )
+- test/readme ( text file with information about the tests )
+
+

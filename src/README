@@ -1,0 +1,35 @@
+Syslog Instrumentation README
+Version : 0.7.7
+This instrumentation implements the syslog CIM providers For Linux
+
+Prerequisites / Dependencies :
+
+- CIM Schema
+- CMPI
+- CMPI Sblim Base Instrumentation ( needed for the syslog-service provider )
+
+Highlevel Instrumentation Description :
+
+This is the package containing the syslog CIM instrumentation, which covers
+three different syslog providers 
+The following are the contents of this directory -
+
+Source Directories
+- syslog-service/ ( syslog service provider source )
+- syslog-conf/ ( syslog configuration provider source )
+- syslog-log/ ( syslog log provider source )
+
+Build Files
+- setting.cmpi ( generic setting file for build environment )
+- rules ( rules for building the code )
+- makefile ( generic makefile for building all the code from within this dir )
+- pegasus_build ( easy script for clean, build and install of code for Pegasus )
+- snia_build ( easy script for clean, build and install of code for SNIA )
+
+Text Files 
+- README ( This file )
+- INSTALL ( text file with install directions and information )
+
+More details about the individual providers and the contents of the directories
+are included in the READMEs within the individual provider directories
+

@@ -1,0 +1,73 @@
+//
+// Syslog_Log.mof
+// 
+// Copyright (c) IBM Corp. 2003, 2009
+// 
+// THIS FILE IS PROVIDED UNDER THE TERMS OF THE ECLIPSE PUBLIC LICENSE
+// ("AGREEMENT"). ANY USE, REPRODUCTION OR DISTRIBUTION OF THIS FILE
+// CONSTITUTES RECIPIENTS ACCEPTANCE OF THE AGREEMENT.
+//
+// You can obtain a current copy of the Eclipse Public License from
+// http://www.opensource.org/licenses/eclipse-1.0.php
+//
+// Author: R Sharada <sharada@in.ibm.com>
+//
+// Interface Type: Common Manageability Programming Interface ( CMPI )
+//
+// Description: CIM Classes for Linux Syslog Log Instrumentation
+//
+
+
+// Syslog_Log 
+                                                                                
+[Description("Logfile of Syslog logging"),
+ Provider("cmpi:Syslog_MessageLog")]
+class Syslog_MessageLog : CIM_MessageLog
+{
+  [Description("Names the creation class name for syslog log"),
+   Override("CreationClassName"), Key]
+  String CreationClassName;
+  [Description("Name of the file containing the log data"),
+   Override("Name"), Key]
+  String Name;
+};
+
+// Syslog_LogRecord 
+
+[Description("Log record of syslog log file"),
+ Provider("cmpi:Syslog_LogRecord")]
+class Syslog_LogRecord : CIM_LogRecord {
+ [ Key, Propagated("CIM_MessageLog.CreationClassName"),
+   Override("LogCreationClassName") ]
+ String LogCreationClassName;
+ [ Key, Propagated("CIM_MessageLog.Name"),
+   Override("LogName") ]
+ String LogName;
+ [ Override("CreationClassName"), Key ]
+ String CreationClassName;
+ [ Override("RecordId"), Key ]
+ String RecordId;
+ [ Override("MessageTimestamp"), Key ]
+ datetime MessageTimestamp;
+ String HostName;
+ [ Override("DataFormat") ]
+ String DataFormat;
+};
+
+// Syslog_RecordInLog 
+
+[Association, Aggregation, Composition, Version ("2.7.0"),
+    Description (
+        "RecordInLog describes the aggregation or location of Log "
+        "entries within a MessageLog."), Provider("cmpi:Syslog_RecordInLog")]
+class Syslog_RecordInLog : CIM_RecordInLog
+{
+    [Key, Aggregate, Min (1), Max (1), Override("MessageLog"),
+        Description ("The Message Log.") ]
+    Syslog_MessageLog REF MessageLog;
+                                                                                
+    [Key, Weak, Override("LogRecord"), Description (
+        "The Log entry contained within the MessageLog.") ]
+    Syslog_LogRecord REF LogRecord;
+};
+

@@ -1,0 +1,14 @@
+********************************************************************************
+class : Syslog_Service
+
+--------------------------------------------------------------------------------
+Syslog_Service : -eq 1
+
+--------------------------------------------------------------------------------
+SystemCreationClassName : -eq CIM_UnitaryComputerSystem
+SystemName : -eq -cmd hostname
+CreationClassName : -eq Syslog_Service
+Name : -eq syslog
+Status : -set
+Started : -set
+
